@@ -7,23 +7,31 @@ export function escolherPersonagem(personagens) {
     while(personagemOne == personagemTwo){
         personagemTwo = personagens[Math.random() * personagens.length]
     }
+
+    const persongensEscolhidos = [personagemOne, personagemTwo]
 }
 
 export function rolarDado() {
     return Math.floor(Math.random() * 1) + 1;
 }
 
-export function calcularResultadoPontos(personagem, rota) {
-    const habilidade = habilidadeRota(rota);
-    const valorHabilidade = personagem[habilidade];
-    const valorDado = rolarDado();
-    const resultado = valorHabilidade + valorDado;
+export function calcularResultadoPontos(personagensEscolhidos, rota) {
+    personagensEscolhidos.forEach((personagem) => {
+        const habilidade = habilidadeRota(rota);
+        const valorHabilidade = personagem[habilidade];
+        const valorDado = rolarDado();
+        const resultado = valorHabilidade + valorDado;
 
-    console.log(`Personagem: ${personagem.nome}`);
-    console.log(`Resultado = ${valorHabilidade} + ${valorDado} = ${resultado}`);
+        console.log(`Personagem: ${personagem.nome}`);
+        console.log(`Resultado = ${valorHabilidade} + ${valorDado} = ${resultado}`); 
+    })
+    
+    calcularResultadoGanho(personagensEscolhidos)
 }
 
-export function calcularResultadoGanho(personagemOne, personagemTwo) {
+function calcularResultadoGanho(personagensEscolhidos) {
+    const { personagemOne, personagemTwo } = personagensEscolhidos
+        
     if(rota === "RETA" || rota === "CURVA"){
        if(personagemOne.pontos > personagemTwo.pontos) {
            console.log(`${personagemOne.nome} ganhou a rodada!`);
