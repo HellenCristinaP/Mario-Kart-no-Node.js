@@ -5,6 +5,7 @@ const personagens = [
         manobrabilidade: 3,
         poder: 3,
         pontos: 0,
+        resultado: 0
     },
     {
         nome: 'Luigi',
@@ -12,6 +13,7 @@ const personagens = [
         manobrabilidade: 4,
         poder: 4,
         pontos: 0,
+        resultado: 0
     },
     {
         nome: 'Peach',
@@ -19,6 +21,7 @@ const personagens = [
         manobrabilidade: 4,
         poder: 2,
         pontos: 0,
+        resultado: 0
     },
     {
         nome: 'Bowser',
@@ -26,6 +29,7 @@ const personagens = [
         manobrabilidade: 2,
         poder: 5,
         pontos: 0,
+        resultado: 0
     },
     {
         nome: 'Yoshi',
@@ -33,6 +37,7 @@ const personagens = [
         manobrabilidade: 4,
         poder: 3,
         pontos: 0,
+        resultado: 0
     }
 ]
 
