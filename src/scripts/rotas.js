@@ -1,13 +1,15 @@
+import { randomizar } from "./math.js";
+
 const rotas = ["RETA", "CURVA", "CONFRONTO"];
 
 export function escolherRota() {
     for (let i = 0; i < 5; i++) {
-        let rotaAleatoria = rotas[Math.floor(Math.random() * rotas.length)];
+        const rotaAleatoria = rotas[randomizar(rotas.length) - 1];
         return rotaAleatoria;
     }
 }
 
-export function habilidadeRota(rota) {
+export function obterHabilidades(rota) {
     switch (rota) {
         case "RETA":
             return "velocidade";

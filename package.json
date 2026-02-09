@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "description": "Jogo do Mario Kart no terminal!",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jogar": "node src/main.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HellenCristinaP/Mario-Kart-no-Node.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HellenCristinaP/Mario-Kart-no-Node.js/issues"
+  },
+  "homepage": "https://github.com/HellenCristinaP/Mario-Kart-no-Node.js#readme"
 }
