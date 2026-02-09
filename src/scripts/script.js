@@ -1,7 +1,12 @@
 import { habilidadeRota } from "./rotas.js";
 
-export function escolherPersonagem() {
+export function escolherPersonagem(personagens) {
+    const personagemOne = personagens[Math.random() * personagens.length]
+    const personagemTwo = personagens[Math.random() * personagens.length]
 
+    while(personagemOne == personagemTwo){
+        personagemTwo = personagens[Math.random() * personagens.length]
+    }
 }
 
 export function rolarDado() {
@@ -16,17 +21,29 @@ export function calcularResultadoPontos(personagem, rota) {
 
     console.log(`Personagem: ${personagem.nome}`);
     console.log(`Resultado = ${valorHabilidade} + ${valorDado} = ${resultado}`);
-
-    personagem.pontos += resultado;
 }
 
 export function calcularResultadoGanho(personagemOne, personagemTwo) {
-    if(personagemOne.pontos > personagemTwo.pontos) {
-        console.log(`${personagemOne.nome} ganhou a rodada!`);
-    } else if (personagemTwo.pontos > personagemOne.pontos) {
-        console.log(`${personagemTwo.nome} ganhou a rodada!`);
+    if(rota === "RETA" || rota === "CURVA"){
+       if(personagemOne.pontos > personagemTwo.pontos) {
+           console.log(`${personagemOne.nome} ganhou a rodada!`);
+           personagemOne.pontos +=1
+        } else if (personagemTwo.pontos > personagemOne.pontos) {
+           console.log(`${personagemTwo.nome} ganhou a rodada!`);
+           personagemTwo.pontos +=1
+        } else {
+            console.log("Empate!");
+        }  
     } else {
-        console.log("Empate!");
+        if(personagemOne.pontos < personagemTwo.pontos) {
+           console.log(`${personagemOne.nome} perdeu um ponto`);
+           personagemOne.pontos -=1
+        } else if (personagemTwo.pontos < personagemOne.pontos) {
+           console.log(`${personagemTwo.nome} perdeu um ponto!`);
+           personagemTwo.pontos -=1
+        } else {
+            console.log("Empate!");
+        }  
     }
 }
 
